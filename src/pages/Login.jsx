@@ -9,7 +9,7 @@ const Container = styled.div`
   width: 100vw;
   height: 100vh;
   display: flex;
-  background-color: #25ccf7;
+  background-color: #2a2c5a;
   align-items: center;
   justify-content: center;
 `;
@@ -17,6 +17,7 @@ const Container = styled.div`
 const Wrapper = styled.div`
   width: 25%;
   padding: 20px;
+  background-color: #f7c32e;
   border: 1px solid black;
   ${mobile({ width: "75%" })}
 `;
@@ -26,6 +27,7 @@ const Title = styled.h1`
   color: white;
   text-align: center
   font-weight: 700;
+  // background-color: black;
 `;
 
 const Form = styled.form`
@@ -39,7 +41,9 @@ const Input = styled.input`
   margin: 10px 0;
   border: 1px solid #444;
   border-radius: 6px;
-  background-color: #000000;
+  // background-color: #000000;
+  background-color: #2a2c5a;
+  borderradius: 10px;
   color: white;
   padding: 10px;
 `;
@@ -101,13 +105,13 @@ const Login = () => {
             LOGIN
           </Button>
           <Link to="/register">
-            <Links style={{ color: "#12b7f8" }}>CREATE A NEW ACCOUNT</Links>
+            <Links style={{ color: "#2a2c5a" }}>CREATE A NEW ACCOUNT</Links>
           </Link>
         </Form>
-        <p style={{ margin: "1em", fontSize: ".9rem", color: "white" }}>
+        <p style={{ margin: "1em", fontSize: ".9rem", color: "#2a2c5a" }}>
           Sample Login
         </p>
-        <p style={{ margin: "1em", fontSize: ".9rem", color: "white" }}>
+        <p style={{ margin: "1em", fontSize: ".9rem", color: "#2a2c5a" }}>
           Username: stark , Password: stark
         </p>
       </Wrapper>

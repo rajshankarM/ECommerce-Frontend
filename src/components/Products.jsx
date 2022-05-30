@@ -7,7 +7,7 @@ const Container = styled.div`
   padding: 20px;
   display: flex;
   flex-wrap: wrap;
-  background: #d6d6d6;
+  background: #3f1668;
   justify-content: space-between;
 `;
 

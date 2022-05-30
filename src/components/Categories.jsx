@@ -6,7 +6,7 @@ const Container = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  background: #f97f51;
+  background: #3f1668;
   overflow: hidden;
   padding: 20px;
 `;

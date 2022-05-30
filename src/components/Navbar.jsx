@@ -9,7 +9,7 @@ import { Context } from "../context/Context";
 
 const Container = styled.div`
   height: 60px;
-  background: #000000;
+  background: #68429e;
   color: white;
   ${mobile({ height: "50px" })}
 `;

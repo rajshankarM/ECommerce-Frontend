@@ -172,7 +172,7 @@ const Button = styled.button`
 `;
 
 const Cart = () => {
-  const quantity = useSelector(state=>state.cart.quantity)
+  const quantity = useSelector((state) => state.cart.quantity);
   const cart = useSelector((state) => state.cart);
   const [stripeToken, setStripeToken] = useState(null);
   const history = useHistory();
@@ -190,12 +190,12 @@ const Cart = () => {
         });
         history.push("/success", {
           data: res.data,
-          });
+        });
       } catch {}
     };
     stripeToken && makeRequest();
   }, [stripeToken, cart.total, history]);
-  
+
   return (
     <Container>
       <Navbar />
@@ -203,7 +203,7 @@ const Cart = () => {
         <Title>YOUR ORDER</Title>
         <Top>
           <Link to="/">
-          <TopButton>CONTINUE SHOPPING</TopButton>
+            <TopButton>CONTINUE SHOPPING</TopButton>
           </Link>
           <TopTexts>
             <TopText>Shopping Bag ({quantity})</TopText>
@@ -260,8 +260,8 @@ const Cart = () => {
               <SummaryItemPrice>$ {cart.total}</SummaryItemPrice>
             </SummaryItem>
             <StripeCheckout
-              name="Shop Now"
-              image="https://avatars.githubusercontent.com/u/69345132?v=4"
+              name="DEVSHAN"
+              image="https://media.istockphoto.com/vectors/initial-letter-logo-design-vector-with-gold-and-silver-color-logo-vector-id1207788372?k=20&m=1207788372&s=170667a&w=0&h=hA6s1o2xNbCNwmdCND6K3c8tWtnP1VCJf2t778bILXw="
               billingAddress
               shippingAddress
               description={`Your total is $${cart.total}`}
