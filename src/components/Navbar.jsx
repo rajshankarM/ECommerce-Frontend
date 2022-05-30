@@ -51,7 +51,7 @@ const MenuItem = styled.div`
 `;
 
 const Navbar = () => {
-  const quantity = useSelector(state=>state.cart.quantity)
+  const quantity = useSelector((state) => state.cart.quantity);
   const { user, dispatch } = useContext(Context);
 
   const handleLogout = () => {
@@ -62,24 +62,24 @@ const Navbar = () => {
     <Container>
       <Wrapper>
         <Left>
-          <Link to="/" style={{ textDecoration: 'none'}}>
-          <Logo>SHOPY.</Logo>
+          <Link to="/" style={{ textDecoration: "none" }}>
+            <Logo>DEVSHAN</Logo>
           </Link>
         </Left>
         <Right>
-        <Link to="/register" style={{ textDecoration: 'none'}}>
-          <MenuItem>{!user && "REGISTER"}</MenuItem>
+          <Link to="/register" style={{ textDecoration: "none" }}>
+            <MenuItem>{!user && "REGISTER"}</MenuItem>
           </Link>
-          <Link to="/login" style={{ textDecoration: 'none'}}>
-          <MenuItem>{!user && "SIGN IN"}</MenuItem>
+          <Link to="/login" style={{ textDecoration: "none" }}>
+            <MenuItem>{!user && "SIGN IN"}</MenuItem>
           </Link>
           <MenuItem onClick={handleLogout}>{user && "LOGOUT"}</MenuItem>
           <Link to="/cart">
-          <MenuItem>
-            <Badge badgeContent={quantity} color="primary">
-              <ShoppingCartOutlined style={{ color: 'white' }} />
-            </Badge>
-          </MenuItem>
+            <MenuItem>
+              <Badge badgeContent={quantity} color="primary">
+                <ShoppingCartOutlined style={{ color: "white" }} />
+              </Badge>
+            </MenuItem>
           </Link>
         </Right>
       </Wrapper>

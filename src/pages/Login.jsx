@@ -1,16 +1,15 @@
 import axios from "axios";
-import { useContext,useRef } from "react";
+import { useContext, useRef } from "react";
 import styled from "styled-components";
 import { Context } from "../context/Context";
 import { mobile } from "../responsive";
 import { Link, useHistory } from "react-router-dom";
 
-
 const Container = styled.div`
   width: 100vw;
   height: 100vh;
   display: flex;
-  background-color: #3d2828;
+  background-color: #25ccf7;
   align-items: center;
   justify-content: center;
 `;
@@ -77,10 +76,13 @@ const Login = () => {
     e.preventDefault();
     dispatch({ type: "LOGIN_START" });
     try {
-      const res = await axios.post("https://ecommerce-thiru.herokuapp.com/api/auth/login", {
-        username: userRef.current.value,
-        password: passwordRef.current.value,
-      });
+      const res = await axios.post(
+        "https://ecommerce-devshan.herokuapp.com/api/auth/login",
+        {
+          username: userRef.current.value,
+          password: passwordRef.current.value,
+        }
+      );
       dispatch({ type: "LOGIN_SUCCESS", payload: res.data });
       res.data && history.push("/");
     } catch (err) {
@@ -93,24 +95,21 @@ const Login = () => {
       <Wrapper>
         <Title>SIGN IN</Title>
         <Form onSubmit={handleSubmit}>
-          <Input
-            placeholder="Username"
-            ref={userRef}
-          />
-          <Input
-            placeholder="Password"
-            type="password"
-            ref={passwordRef}
-          />
-          <Button type="submit" disabled={isFetching} >
+          <Input placeholder="Username" ref={userRef} />
+          <Input placeholder="Password" type="password" ref={passwordRef} />
+          <Button type="submit" disabled={isFetching}>
             LOGIN
           </Button>
           <Link to="/register">
-          <Links style={{color: "#12b7f8"}} >CREATE A NEW ACCOUNT</Links>
+            <Links style={{ color: "#12b7f8" }}>CREATE A NEW ACCOUNT</Links>
           </Link>
         </Form>
-        <p style={{ margin: "1em", fontSize: ".9rem", color: "white" }}>Sample Login</p>
-        <p style={{ margin: "1em", fontSize: ".9rem", color: "white" }}>Username: stark , Password: stark</p>
+        <p style={{ margin: "1em", fontSize: ".9rem", color: "white" }}>
+          Sample Login
+        </p>
+        <p style={{ margin: "1em", fontSize: ".9rem", color: "white" }}>
+          Username: stark , Password: stark
+        </p>
       </Wrapper>
     </Container>
   );

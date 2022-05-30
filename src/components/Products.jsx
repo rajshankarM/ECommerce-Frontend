@@ -16,7 +16,6 @@ const Center = styled.div`
   text-align: center;
 `;
 
-
 const Products = ({ cat, filters, sort }) => {
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
@@ -26,8 +25,8 @@ const Products = ({ cat, filters, sort }) => {
       try {
         const res = await axios.get(
           cat
-            ? `https://ecommerce-thiru.herokuapp.com/api/products?category=${cat}`
-            : "https://ecommerce-thiru.herokuapp.com/api/products"
+            ? `https://ecommerce-devshan.herokuapp.com/api/products?category=${cat}`
+            : "https://ecommerce-devshan.herokuapp.com/api/products"
         );
         setProducts(res.data);
       } catch (err) {}
@@ -64,15 +63,16 @@ const Products = ({ cat, filters, sort }) => {
 
   return (
     <>
-    <Center>
-  </Center>
-    <Container>
-      {cat
-        ? filteredProducts.map((item) => <Product item={item} key={item.id} />)
-        : products
-            .slice(0, 8)
-            .map((item) => <Product item={item} key={item.id} />)}
-    </Container>
+      <Center></Center>
+      <Container>
+        {cat
+          ? filteredProducts.map((item) => (
+              <Product item={item} key={item.id} />
+            ))
+          : products
+              .slice(0, 8)
+              .map((item) => <Product item={item} key={item.id} />)}
+      </Container>
     </>
   );
 };

@@ -4,11 +4,10 @@ import styled from "styled-components";
 import { mobile } from "../responsive";
 import { Link, useHistory } from "react-router-dom";
 
-
 const Container = styled.div`
   width: 100vw;
   height: 100vh;
-  background-color: #3d2828;
+  background-color: #25ccf7;
   background-size: cover;
   display: flex;
   align-items: center;
@@ -49,7 +48,7 @@ const Input = styled.input`
 const Agreement = styled.span`
   font-size: 12px;
   margin: 20px 0px;
-  color: white;
+  color: #3b3b98;
 `;
 
 const Button = styled.button`
@@ -78,11 +77,14 @@ const Register = () => {
     e.preventDefault();
     setError(false);
     try {
-      const res = await axios.post("https://ecommerce-thiru.herokuapp.com/api/auth/register", {
-        username,
-        email,
-        password,
-      });
+      const res = await axios.post(
+        "https://ecommerce-devshan.herokuapp.com/api/auth/register",
+        {
+          username,
+          email,
+          password,
+        }
+      );
       res.data && history.push("/login");
     } catch (err) {
       setError(true);
@@ -93,20 +95,37 @@ const Register = () => {
       <Wrapper>
         <Title>CREATE AN ACCOUNT</Title>
         <Form onSubmit={handleSubmit}>
-          <Input placeholder="Username" onChange={(e) => setUsername(e.target.value)} />
-          <Input type="email" placeholder="E-Mail" onChange={(e) => setEmail(e.target.value)} />
-          <Input type="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)} />
+          <Input
+            placeholder="Username"
+            onChange={(e) => setUsername(e.target.value)}
+          />
+          <Input
+            type="email"
+            placeholder="E-Mail"
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <Input
+            type="password"
+            placeholder="Password"
+            onChange={(e) => setPassword(e.target.value)}
+          />
           <Agreement>
             By creating an account, I consent to the processing of my personal
             data in accordance with the <b>PRIVACY POLICY</b>
-            <br/>
-            <br/>
-          <Link to="/login">
-          <Links style={{ marginTop:"20px", color: "#12b7f8"}}>Already, Have an Account?</Links>
-          </Link>
+            <br />
+            <br />
+            <Link to="/login">
+              <Links style={{ marginTop: "20px", color: "#3B3B98" }}>
+                Already, Have an Account?
+              </Links>
+            </Link>
           </Agreement>
           <Button type="submit">CREATE</Button>
-          {error && <span style={{color:"red", marginTop:"30px"}}>Something went wrong!</span>}
+          {error && (
+            <span style={{ color: "red", marginTop: "30px" }}>
+              Something went wrong!
+            </span>
+          )}
         </Form>
       </Wrapper>
     </Container>

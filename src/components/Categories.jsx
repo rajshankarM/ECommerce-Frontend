@@ -6,22 +6,20 @@ const Container = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  background: #d6d6d6;
+  background: #f97f51;
   overflow: hidden;
   padding: 20px;
 `;
 
 const Categories = () => {
   return (
-    <>   
-    
-    <Container>
-      {categories.map((item) => (
-        <CategoryItem item={item} key={item.id} />
-      ))}
-    </Container>
+    <>
+      <Container>
+        {categories.map((item) => (
+          <CategoryItem item={item} key={item.id} />
+        ))}
+      </Container>
     </>
-
   );
 };
 
