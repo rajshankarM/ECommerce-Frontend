@@ -110,7 +110,7 @@ const Login = () => {
           Sample Login
         </p>
         <p style={{ margin: "1em", fontSize: ".9rem", color: "black" }}>
-          Username: stark , Password: stark
+          Username: demo , Password: 123456
         </p>
       </Wrapper>
     </Container>
