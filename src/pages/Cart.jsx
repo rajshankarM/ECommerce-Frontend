@@ -189,8 +189,10 @@ const Cart = () => {
           amount: 500,
         });
         history.push("/success", {
-          data: res.data,
+          stripeData: res.data,
+          products: cart,
         });
+        // data: res.data,
       } catch {}
     };
     stripeToken && makeRequest();
