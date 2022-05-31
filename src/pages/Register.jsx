@@ -7,7 +7,7 @@ import { Link, useHistory } from "react-router-dom";
 const Container = styled.div`
   width: 100vw;
   height: 100vh;
-  background-color: #25ccf7;
+  background-color: #2a2c5a;
   background-size: cover;
   display: flex;
   align-items: center;
@@ -18,7 +18,7 @@ const Wrapper = styled.div`
   width: 40%;
   padding: 20px;
   border: 1px solid black;
-  border-radius: 6px;
+  border-radius: 25px;
   ${mobile({ width: "75%" })}
 `;
 
@@ -40,15 +40,15 @@ const Input = styled.input`
   border: 1px solid #444;
   border-radius: 6px;
   margin: 20px 10px 0px 0px;
-  background-color: #000000;
-  color: white;
+  background-color: #7686e3;
+  color: black;
   padding: 10px;
 `;
 
 const Agreement = styled.span`
   font-size: 12px;
   margin: 20px 0px;
-  color: #3b3b98;
+  background-color: #2a2c5a;
 `;
 
 const Button = styled.button`
@@ -115,7 +115,7 @@ const Register = () => {
             <br />
             <br />
             <Link to="/login">
-              <Links style={{ marginTop: "20px", color: "#3B3B98" }}>
+              <Links style={{ marginTop: "20px", color: "#e0e2e3" }}>
                 Already, Have an Account?
               </Links>
             </Link>

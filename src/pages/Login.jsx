@@ -17,7 +17,7 @@ const Container = styled.div`
 const Wrapper = styled.div`
   width: 25%;
   padding: 20px;
-  background-color: #f7c32e;
+  border-radius: 25px;
   border: 1px solid black;
   ${mobile({ width: "75%" })}
 `;
@@ -27,7 +27,6 @@ const Title = styled.h1`
   color: white;
   text-align: center
   font-weight: 700;
-  // background-color: black;
 `;
 
 const Form = styled.form`
@@ -41,10 +40,9 @@ const Input = styled.input`
   margin: 10px 0;
   border: 1px solid #444;
   border-radius: 6px;
-  // background-color: #000000;
-  background-color: #2a2c5a;
+
   borderradius: 10px;
-  color: white;
+  color: black;
   padding: 10px;
 `;
 
@@ -105,13 +103,13 @@ const Login = () => {
             LOGIN
           </Button>
           <Link to="/register">
-            <Links style={{ color: "#2a2c5a" }}>CREATE A NEW ACCOUNT</Links>
+            <Links style={{ color: "white" }}>CREATE A NEW ACCOUNT</Links>
           </Link>
         </Form>
-        <p style={{ margin: "1em", fontSize: ".9rem", color: "#2a2c5a" }}>
+        <p style={{ margin: "1em", fontSize: ".9rem", color: "black" }}>
           Sample Login
         </p>
-        <p style={{ margin: "1em", fontSize: ".9rem", color: "#2a2c5a" }}>
+        <p style={{ margin: "1em", fontSize: ".9rem", color: "black" }}>
           Username: stark , Password: stark
         </p>
       </Wrapper>
